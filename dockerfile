@@ -10,7 +10,7 @@ WORKDIR /forge
 RUN cd /
 RUN mkdir forge
 RUN cd forge
-RUN wget 
+RUN wget https://github.com/FloridaMan7588/docker-forge-server/raw/main/server-files.zip
 RUN unzip server-files.zip
 RUN rm server-files.zip
 
