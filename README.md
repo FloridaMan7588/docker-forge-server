@@ -1,9 +1,6 @@
 # docker-forge
  Simple Minecraft Forge server running in a docker container.
 
-#Disclaimer
-The files required for forge to run on most versions are not present, do not attempt to run on any other version than 1.12.2
-These files will be added in the next commit as currently I am pushing this version from a laptop that doesn't have the space for forge.
 # Setup
 This docker container requires a volume to edit any variable as there aren't any environment variables mapped as of now. 
 The volume needs to be mapped to /forge in the container. The port 25565 needs to be exposed to 25565 in the container.
