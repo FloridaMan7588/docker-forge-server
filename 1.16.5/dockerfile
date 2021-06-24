@@ -1,17 +1,19 @@
 FROM ubuntu
+ENV FORGE_VER=36.1.0 \
+    MINECRAFT_VER=1.16.5
 RUN apt-get update
 RUN apt-get upgrade -y
 RUN apt-get update && apt install default-jre -y
 RUN apt install wget -y
-RUN apt install unzip -y
-RUN apt install zip -y
 WORKDIR /forge
 
 RUN cd /
 RUN mkdir forge
 RUN cd forge
-RUN wget https://github.com/FloridaMan7588/docker-forge-server/raw/main/1.16.5/server-files.zip
-RUN unzip server-files.zip
-RUN rm server-files.zip
+RUN wget https://maven.minecraftforge.net/net/minecraftforge/forge/1.16.5-36.1.0/forge-1.16.5-36.1.0-installer.jar
+RUN java -jar forge-${MINECRAFT_VER}-${FORGE_VER}-installer.jar --installServer
+RUN rm forge-1.16.5-36.1.0-installer.jar.log
+RUN rm forge-1.16.5-36.1.0-installer.jar
 
-CMD java -jar -Xmx2048m -Xms1024m forge_server.jar
+
+CMD java -jar -Xmx2048m -Xms1024m forge-${MINECRAFT_VER}-${FORGE_VER}.jar
