@@ -1,3 +1,7 @@
+# Archived
+I'm archiving this because there is better software out there. I created this originally because existing images didn't do what I wanted them to do, this is no longer the case. Please use [itzg/minecraft-server](https://github.com/itzg/minecraft-server) instead
+
+
 # docker-forge
  Simple Minecraft Forge server running in a docker container.
 
